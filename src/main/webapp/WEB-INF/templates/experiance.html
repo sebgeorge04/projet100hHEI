@@ -1,0 +1,159 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Nos Produits</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+    <!-- light-box -->
+	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />
+   <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+		});
+	</script>
+</head>
+<body>
+	<div class="header" th:insert="~{common :: header}">
+		
+	  </div>
+     <div class="main">
+      <div class="shop_top">
+		<div class="container">
+			<div class="row ex_box">
+				<h3 class="m_2">Nos Produits</h3>
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/300.jpg" data-fancybox-group="gallery" title="Plaque Manches/Courroies"><img src="images/300.jpg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Plaque Manches/Courroies
+					</div>
+				</a></div>
+				</div>
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/1400.jpg" data-fancybox-group="gallery" title="Pickguard/jack/controle"><img src="images/1400.jpg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Pickguard/Jack/Contrôle
+					</div>
+				</a></div>
+				</div>
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/100.jpg" data-fancybox-group="gallery" title="Bouton"><img src="images/100.jpg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Bouton
+					</div>
+				</a></div>
+				</div>
+		    </div>
+		    <div class="row ex_box">
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/1200.jpg" data-fancybox-group="gallery" title="Sillet"><img src="images/1200.jpg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Sillet
+					</div>
+				</a></div>
+				</div>
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/500.jpg" data-fancybox-group="gallery" title="Chevalet/Vibrato/Cordier"><img src="images/500.jpg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Chevalet/Vibrato/Cordier
+					</div>
+				</a></div>
+				</div>
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/400.jpg" data-fancybox-group="gallery" title="Mécaniques"><img src="images/400.jpeg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Mécaniques
+					</div>
+				</a></div>
+				</div>
+		    </div>
+		    <div class="row ex1_box">
+			   <div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/600.jpg" data-fancybox-group="gallery" title="Electronique"><img src="images/600.gif" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Electronique
+					</div>
+				</a></div>
+				</div>
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/1000.jpg" data-fancybox-group="gallery" title="Micros"><img src="images/1000.jpg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+					Micros
+					</div>
+				</a></div>
+				</div>
+				<div class="col-md-4 team1">
+				<div class="img_section magnifier2">
+				  <a class="fancybox" href="images/1300.jpg" data-fancybox-group="gallery" title="Corps et Manches"><img src="images/1300.jpg" class="img-responsive" alt=""><span> </span>
+					<div class="img_section_txt">
+						Corps et Manches
+					</div>
+							</a></div>
+
+			   </div>
+			   
+		    </div>
+		    
+		 </div>
+	   </div>
+	  </div>
+	  <div class="footer" th:insert="~{common :: footer}">
+			
+		</div>
+</body>	
+</html>
