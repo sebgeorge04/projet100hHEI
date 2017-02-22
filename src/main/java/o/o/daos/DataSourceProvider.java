@@ -6,6 +6,13 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 public class DataSourceProvider {
 	private static MysqlDataSource dataSource;
+	private static class DataSourceProviderHolder {
+		private final static DataSourceProvider instance = new DataSourceProvider();
+	}
+	
+	public static DataSourceProvider getInstance() {
+		return DataSourceProviderHolder.instance;
+	}
 
 	public static DataSource getDataSource() {
 		if (dataSource == null) {

@@ -2,12 +2,21 @@ package o.o.manager;
 
 import java.util.List;
 
+import o.o.daos.ArticleDao;
+import o.o.daos.ArticleDaoImpl;
+import o.o.daos.CategoriesDao;
+import o.o.daos.CategoriesDaoImpl;
 import o.o.daos.ComptesDao;
 import o.o.daos.ComptesDaoImpl;
 import o.o.daos.ContactDao;
 import o.o.daos.ContactDaoImpl;
+import o.o.daos.DevisDao;
+import o.o.daos.DevisDaoImpl;
+import o.o.entities.Article;
+import o.o.entities.Categories;
 import o.o.entities.Comptes;
 import o.o.entities.Contact;
+import o.o.entities.Devis;
 
 
 public class Library {
@@ -22,6 +31,9 @@ public class Library {
 	
 	private ComptesDao comptesDao = new ComptesDaoImpl();
 	private ContactDao contactDao = new ContactDaoImpl();
+	private ArticleDao articleDao=new ArticleDaoImpl();
+	private CategoriesDao categorieDao=new CategoriesDaoImpl();
+	private DevisDao devisDao=new DevisDaoImpl();
 
 
 	private Library() {
@@ -58,6 +70,33 @@ public class Library {
     public void ModifContact(String nom){
     	contactDao.ModifContact(nom);
     }
+	public List<Article> listArticles(){
+		return articleDao.listArticles();
+	}
+	public Article getArticle(int id_article){
+		return articleDao.getArticle(id_article);
+	}
+	public Article addArticle(Article article){
+		return articleDao.addArticle(article);
+		
+	}
+	public List<Categories> listCategories(){
+		return categorieDao.listCategories();
+		
+	}
+	public Categories getCategories(int id){
+		return categorieDao.getCategories(id);
+		
+	}
+	public Categories addCategories(Categories categorie){
+		return categorieDao.addCategories(categorie);
+	}
+	public Categories deleteCategories(int id){
+		return categorieDao.deleteCategories(id);
+	}
+	public Devis addDevis(Devis devis){
+		return devisDao.addDevis(devis);
+	}
 }
 
 

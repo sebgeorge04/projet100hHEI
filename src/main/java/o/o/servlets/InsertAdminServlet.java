@@ -13,47 +13,48 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
+import o.o.entities.Article;
+import o.o.entities.Categories;
 import o.o.entities.Comptes;
 import o.o.manager.Library;
 
 
-@WebServlet("/adduser")
-public class NewUserServlet extends AbstractGenericServlet{
 
-	private static final long serialVersionUID = 4982865059712541281L;
 
+
+@WebServlet("/insert")
+public class InsertAdminServlet extends AbstractGenericServlet {
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Locale.setDefault(Locale.ENGLISH);
 		TemplateEngine templateEngine = this.createTemplateEngine(req);
         ServletContextTemplateResolver templateResolver= new ServletContextTemplateResolver(req.getServletContext());
         templateResolver.setCharacterEncoding("UTF-8");
 		WebContext context = new WebContext(req, resp, req.getServletContext());
-		
+		context.setVariable("categories", Library.getInstance().listCategories());
 	
-	
-		templateEngine.process("register", context, resp.getWriter());
+		templateEngine.process("insertadmin", context, resp.getWriter());
 	}
-
-	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String nom = req.getParameter("nom");
-	
-		String prenom = req.getParameter("prenom");
-		String motdepasse	 = req.getParameter("motdepasse");
+		Integer id_article = Integer.parseInt(req.getParameter("id_article"));
+		String description = req.getParameter("description");
+		Integer id = Integer.parseInt(req.getParameter("id"));
 		
 	
-		String email = req.getParameter("email");
-
+		Integer prix = Integer.parseInt(req.getParameter("prix"));
+		Categories cat = Library.getInstance().getCategories(id);
 		
 		
+		System.out.println(" ID" + id_article);
 		System.out.println(" name" + nom);
-        System.out.println("prenom" + prenom);
-        System.out.println("motdepasse" + motdepasse);
-        System.out.println("email" +email);
+        System.out.println("description" + description);
+        System.out.println("categorie" + cat);
+        System.out.println("prix" +prix);
         
         
-		Comptes newcompte= new Comptes(nom,prenom,motdepasse,email);
-		Comptes addedActor=Library.getInstance().addComptes(newcompte);
+		Article article= new Article(cat,null,nom,description,prix);
+		Article addedArt=Library.getInstance().addArticle(article); 
 
 		
 		
@@ -62,10 +63,10 @@ public class NewUserServlet extends AbstractGenericServlet{
 	        // build HTML code
 	        String htmlRespone = "<html>";
 	        htmlRespone += "<h2>Récapitulatif: <br/>";
-	        htmlRespone += "<h2>Nom du client: " + nom + "<br/>";      
-	        htmlRespone += "<h2>Prenom du client: " + prenom + "<br/>";
-	        htmlRespone += "<h2>Votre login: " + email + "<br/>";
-	        htmlRespone += "<h2>Votre mot de passe : " + motdepasse + "<br/>";
+	        htmlRespone += "<h2>Nom de l'article: " + nom + "<br/>";      
+	        htmlRespone += "<h2>Description de l'article: " + description + "<br/>";
+	        htmlRespone += "<h2>Prix: " + prix + "<br/>";
+	        htmlRespone += "<h2>Catégorie: " + cat + "<br/>";
 	        htmlRespone += "</html>";
 	         
 	      // return response
