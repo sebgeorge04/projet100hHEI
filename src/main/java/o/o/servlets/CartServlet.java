@@ -1,4 +1,4 @@
-package o.o.servlets;
+ï»¿package o.o.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,7 +42,7 @@ import o.o.manager.Library;
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            out.println("<h1>Article ajouté au panier</h1>");
+            out.println("<h1>Article ajoutÃ© au panier</h1>");
             out.println("<form action='index.html'>Ajouter d'autres articles au panier?<input type='submit' value='go'></form>");
             out.println("<hr>");
             out.println("<h2>Panier</h2>");
@@ -76,7 +76,7 @@ import o.o.manager.Library;
 	        try (PrintWriter out = resp.getWriter()) {
 	            /* TODO output your page here. You may use following sample code. */
 	  
-	            out.println("<h1>Article ajouté au panier</h1>");
+	            out.println("<h1>Article ajoutÃ© au panier</h1>");
 	            out.println("<form action='manches'>Ajouter d'autres articles au panier?<input type='submit' value='go'></form>");
 	            out.println("<hr>");
 	            out.println("<h2>Panier</h2>");
@@ -84,7 +84,7 @@ import o.o.manager.Library;
 	            out.println("<table border='1px'>");
 	             
 	            for(String key: items.keySet()){
-	                out.println("<tr><td>"+key+" - </td><td>"+"€"+items.get(key)+"</td></tr>");
+	                out.println("<tr><td>"+key+" - </td><td>"+"â‚¬"+items.get(key)+"</td></tr>");
 	            }
 	            out.println("<table>");
 	      
