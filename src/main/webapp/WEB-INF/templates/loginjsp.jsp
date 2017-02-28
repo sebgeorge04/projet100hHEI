@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Produit</title>
+<title>Free Snow Bootstrap Website Template | Checkout :: w3layouts</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -46,32 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         });
      </script>
-     <!----details-product-slider--->
-				<!-- Include the Etalage files -->
-					<link rel="stylesheet" href="css/etalage.css">
-					<script src="js/jquery.etalage.min.js"></script>
-				<!-- Include the Etalage files -->
-				<script>
-						jQuery(document).ready(function($){
-			
-							$('#etalage').etalage({
-								thumb_image_width: 300,
-								thumb_image_height: 400,
-								
-								show_hint: true,
-								click_callback: function(image_anchor, instance_id){
-									alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-								}
-							});
-							// This is for the dropdown list example:
-							$('.dropdownlist').change(function(){
-								etalage_show( $(this).find('option:selected').attr('class') );
-							});
-
-					});
-				</script>
-				<!----//details-product-slider--->	
-</head>
+ </head>
 <body>
 	<div class="header">
 		<div class="container">
@@ -84,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <div class="menu">
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
-						    	<li class="current"><a href="shop.html">Shop</a></li>
+						    	<li><a href="shop.html">Shop</a></li>
 						    	<li><a href="team.html">Team</a></li>
 						    	<li><a href="shop.html">Events</a></li>
 						    	<li><a href="experiance.html">Experiance</a></li>
@@ -142,102 +117,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <div class="main">
       <div class="shop_top">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-9 single_left">
-				   <div class="single_image">
-					     <ul id="etalage">
-							<li>
-								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="images/3.jpg" />
-									<img class="etalage_source_image" src="images/3.jpg" />
-								</a>
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/4.jpg" />
-								<img class="etalage_source_image" src="images/4.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/5.jpg" />
-								<img class="etalage_source_image" src="images/5.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/6.jpg" />
-								<img class="etalage_source_image" src="images/6.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/7.jpg" />
-								<img class="etalage_source_image" src="images/7.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/8.jpg" />
-								<img class="etalage_source_image" src="images/8.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="images/9.jpg" />
-								<img class="etalage_source_image" src="images/9.jpg" />
-							</li>
-						</ul>
-					    </div>
-				        <!-- end product_slider -->
-				        <div class="single_right">
-				        	<h3>Libellé produit </h3>
-				        	<p class="m_10">Description</p>
-				        	<ul class="options">
-								<h4 class="m_12">Options</h4>
-								<li><a href="#">151</a></li>
-								<li><a href="#">148</a></li>
-								<li><a href="#">156</a></li>
-								<li><a href="#">145</a></li>
-								<li><a href="#">162(w)</a></li>
-								<li><a href="#">163</a></li>
-							</ul>
-				        	<ul class="product-colors">
-								<h3>available Colors</h3>
-								<li><a class="color1" href="#"><span> </span></a></li>
-								<li><a class="color2" href="#"><span> </span></a></li>
-								<li><a class="color3" href="#"><span> </span></a></li>
-								<li><a class="color4" href="#"><span> </span></a></li>
-								<li><a class="color5" href="#"><span> </span></a></li>
-								<li><a class="color6" href="#"><span> </span></a></li>
-								<div class="clear"> </div>
-							</ul>
-							<div class="btn_form">
-							   <form>
-								 <input type="submit" value="Acheter" title="">
-							  </form>
-							</div>
-							<ul class="add-to-links">
-    			              <li><img src="images/wish.png" alt=""><a href="#">Ajouter à la liste de souhait</a></li>
-    			            </ul>
-					
-				        </div>
-				        <div class="clear"> </div>
+			<div class="col-md-6">
+				 <div class="login-page">
+					<h4 class="title">New Customers</h4>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
+					<div class="button1">
+					   <a href="register.html"><input type="submit" name="Submit" value="Create an Account"></a>
+					 </div>
+					 <div class="clear"></div>
+				  </div>
 				</div>
-				<div class="col-md-3">
-				  <div class="box-info-product">
-					<p class="price2">$130.25</p>
-					       <ul class="prosuct-qty">
-								<span>Quantité:</span>
-								<select>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-								</select>
-							</ul>
-							<button type="submit" name="Submit" class="exclusive">
-							   <span>Ajouter au panier</span>
-							</button>
-				   </div>
-			   </div>
-			</div>		
-			
-				</div>
-			</div>	
-	     </div>
-	   </div>
+				<div class="col-md-6">
+				 <div class="login-title">
+	           		<h4 class="title">Registered Customers</h4>
+					<div id="loginbox" class="loginbox">
+		<form method="post" action="connexion">
+            <fieldset>
+                <legend>Connexion</legend>
+                <p>Vous pouvez vous connecter via ce formulaire.</p>
+
+                <label for="nom">Adresse email <span class="requis">*</span></label>
+                <input type="email" id="email" name="email" value="<c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
+                <span class="erreur">${form.erreurs['email']}</span>
+                <br />
+
+                <label for="motdepasse">Mot de passe <span class="requis">*</span></label>
+                <input type="password" id="motdepasse" name="motdepasse" value="" size="20" maxlength="20" />
+                <span class="erreur">${form.erreurs['motdepasse']}</span>
+                <br />
+
+                <input type="submit" value="Connexion" class="sansLabel" />
+                <br />
+                
+                <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
+            </fieldset>
+        </form>
+					</div>
+			      </div>
+				 <div class="clear"></div>
+			  </div>
+			</div>
+		  </div>
 	  </div>
 	  <div class="footer">
 			<div class="container">

@@ -1,0 +1,62 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Fragments</title>
+</head>
+<body>
+	
+<div class="header" th:fragment="header">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				 <div class="header-left">
+					 <div class="logo">
+						<a href="index.html"><img src="images/lg.png" alt="" width="40px" height="45px"/></a>
+					 </div>
+					 <div class="menu">
+						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+						    <ul class="nav" id="nav">
+						    	<li><a href="home">Accueil</a></li>
+						    	<li><a href="categories">Produits</a></li>
+						    	<li><a href="realisations">Realisations</a></li>
+						    	<li><a href="devis">Devis</a></li>
+						    	
+						    	<li><a href="groupes">Groupes</a></li>
+								<li><a href="contact">Infos</a></li>								
+								<div class="clear"></div>
+							</ul>
+							<script type="text/javascript" src="js/responsive-nav.js"></script>
+				    </div>							
+	    		    <div class="clear"></div>
+	    	    </div>
+	    	      <div id="accordian">
+	<ul>
+		<li>
+			<p><span class="icon-dashboard"></span>Bienvenue [[${session.utilisateurConnecte}]]</p>
+			<ul>
+				<li><a href="deconnexion">Deconnexion</a></li>
+				<li><a href="#">Modifier compte</a></li>
+				
+			</ul>
+			</li>
+			</ul>
+			</div>
+	        <!--      <a href="#" ><span>Bienvenue [[${session.utilisateurConnecte}]]</span></a>
+	            <ul class="dropdown-menu" role="menu">
+						<li><a th:href="@{/eleve/compte}">Mon compte</a></li>
+						<li class="divider"></li>
+						<li><a th:href="@{/deconnexion}">Déconnexion</a></li>
+					</ul>--></div>
+	            <div class="header_right">
+	          
+	    		  <!-- start search-->
+				  <div class="search-box">
+							<div id="sb-search" class="sb-search">
+								<form>
+									<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+									<input class="sb-search-submit" type="submit" value="">
+									<span class="sb-icon-search"> </span>
+								</form>
+							</div>
+						</div>

@@ -7,9 +7,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Connexion</title>
+<title>Free Snow Bootstrap Website Template | Contact :: w3layouts</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/vijays_shop.css" type="text/css" >
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -49,49 +50,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  </head>
 <body>
 	<div class="header" th:insert="~{common :: header}">
-		
+	
 	  </div>
      <div class="main">
-      <div class="shop_top">
-		<div class="container">
-			<div class="col-md-6">
-				 <div class="login-page">
-					<h4 class="title">Nouveau client</h4>
-					<p>Créez votre compte!</p>
-					<div class="button1">
-					   <a href="register.html"><input type="submit" name="Submit" value="Creer un compte"></a>
-					 </div>
-					 <div class="clear"></div>
-				  </div>
-				</div>
-				<div class="col-md-6">
-				 <div class="login-title">
-	           		<h4 class="title">Utilisateurs déjà enregistrés</h4>
-					<div id="loginbox" class="loginbox">
-						<form method="post" action="connexiontest">
-						  <fieldset class="input">
-						    <p id="login-form-username">
-						      <label for="email">Email</label>
-						      <input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <p id="login-form-password">
-						      <label for="motdepasse">Password</label>
-						      <input id="modlgn_passwd" type="password" name="motdepasse" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <div class="remember">
-							    <p id="login-form-remember">
-							      <label for="modlgn_remember"><a href="#">Mot de passe oublié? </a></label>
-							   </p>
-							    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
-							 </div>
-						  </fieldset>
-						 </form>
-					</div>
-			      </div>
-				 <div class="clear"></div>
-			  </div>
-			</div>
-		  </div>
+      <div id="big_wrapper">            
+            <center><h2> Bienvenue admin</h2></center> <br /> <br />
+           
+               <!--<div class="logmeout"> <input type="submit" name="signout" value=" Se deconnecter "> </div>   -->  
+                <nav id="links"> 
+                    <ul>                        
+                        <li> <a href="admin_insert.jsp" title="Insérer un article" > <img id="insert"  border="0" src="images/insert.jpg" width="75" height="75" alt="Loading" /> </a> </li>
+                        <li> <a href="admin_update.jsp" title="M.A.J article" > <img id="insert"  border="0" src="images/update.jpg" width="75" height="75" alt="Loading" /> </a> </li>
+                        <li> <a href="admin_remove.jsp" title="Supprimer un article" > <img id="insert"  border="0" src="images/delete.png" width="75" height="75" alt="Loading" /> </a> </li>                    
+                        <li> <a href="admin_view_all.jsp" title="Liste des articles" > <img id="insert"  border="0" src="images/view.jpg" width="75" height="75" alt="Loading" /> </a> </li>                    
+                    </ul>
+                </nav>
+              
+                    </div>
+                    </br>
+ <h3> Renseignez ici les informations sur votre catégorie</h3> <br /> 
+                    
+                           <form>
+                
+                <form action="newcat" method="post">
+                 <label class="labell" for="id">ID categorie :</label>
+						      <input type="text" name="id" class="champ" value="id" > <br/>
+                  <label class="labell" for="nom">Nom :</label>
+						      <input type="text" name="nom" class="champ" value="nom"></br></br>
+						      
+						        <input type="submit" value="  Insérer  "/>
+                </form>
+                </br>
+                
+          
+                </br>
+                    </div>
 	  </div>
 	  <div class="footer" th:insert="~{common :: footer}">
 			

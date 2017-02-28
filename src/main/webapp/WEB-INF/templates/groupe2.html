@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Connexion</title>
+<title>Les Hoodoo Tones</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -46,7 +46,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         });
      </script>
- </head>
+     <!----details-product-slider--->
+				<!-- Include the Etalage files -->
+					<link rel="stylesheet" href="css/etalage.css">
+					<script src="js/jquery.etalage.min.js"></script>
+				<!-- Include the Etalage files -->
+				<script>
+						jQuery(document).ready(function($){
+			
+							$('#etalage').etalage({
+								thumb_image_width: 250,
+								thumb_image_height: 260,
+								
+								show_hint: true,
+								click_callback: function(image_anchor, instance_id){
+									alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+								}
+							});
+							// This is for the dropdown list example:
+							$('.dropdownlist').change(function(){
+								etalage_show( $(this).find('option:selected').attr('class') );
+							});
+
+					});
+				</script>
+				<!----//details-product-slider--->	
+</head>
 <body>
 	<div class="header" th:insert="~{common :: header}">
 		
@@ -54,47 +79,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <div class="main">
       <div class="shop_top">
 		<div class="container">
-			<div class="col-md-6">
-				 <div class="login-page">
-					<h4 class="title">Nouveau client</h4>
-					<p>Créez votre compte!</p>
-					<div class="button1">
-					   <a href="register.html"><input type="submit" name="Submit" value="Creer un compte"></a>
-					 </div>
-					 <div class="clear"></div>
-				  </div>
+			<div class="row">
+				<div class="col-md-9 single_left">
+				   <div class="single_image">
+					     <ul id="etalage">
+							<li>
+								<a href="optionallink.html">
+									<img class="etalage_thumb_image" src="images/oo1.jpg" />
+									<img class="etalage_source_image" src="images/oo1.jpg" />
+								</a>
+							</li>
+							
+						</ul>
+					    </div>
+				        <!-- end product_slider -->
+				        <div class="single_right">
+				        	<h3>SPIB</h3>
+				        	<p class="m_10">Groupe de Rock originaire de Boussière-sur-Sambre</p>
+				        	
+						
+						
+							<div class="social_buttons">
+								<h4>Retrouvez les sur:</h4>
+							
+					            <button type="button" class="btn1 btn1-default1 btn1-facebook" onclick="">
+					              <i class="icon-facebook"></i> Facebook
+					      
+					        </div>
+				        </div>
+				        <div class="clear"> </div>
 				</div>
-				<div class="col-md-6">
-				 <div class="login-title">
-	           		<h4 class="title">Utilisateurs déjà enregistrés</h4>
-					<div id="loginbox" class="loginbox">
-						<form method="post" action="connexiontest">
-						  <fieldset class="input">
-						    <p id="login-form-username">
-						      <label for="email">Email</label>
-						      <input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <p id="login-form-password">
-						      <label for="motdepasse">Password</label>
-						      <input id="modlgn_passwd" type="password" name="motdepasse" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <div class="remember">
-							    <p id="login-form-remember">
-							      <label for="modlgn_remember"><a href="#">Mot de passe oublié? </a></label>
-							   </p>
-							    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
-							 </div>
-						  </fieldset>
-						 </form>
-					</div>
-			      </div>
-				 <div class="clear"></div>
-			  </div>
+				
+			</div>		
+			<div class="desc">
+			   	<h4>Description</h4>
+			   	<p>Groupe d'amis d'enfance faisant des reprises survitaminées!</p>
 			</div>
-		  </div>
+			<div align="center">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/9PjYryf3BS4" frameborder="0" allowfullscreen></iframe></div>
+			
+	     </div>
+	   </div>
 	  </div>
 	  <div class="footer" th:insert="~{common :: footer}">
-			
+
 		</div>
 </body>	
 </html>

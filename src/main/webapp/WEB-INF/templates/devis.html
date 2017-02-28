@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Snow Bootstrap Website Template | Shop :: w3layouts</title>
+<title>Free Snow Bootstrap Website Template | Register :: w3layouts</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -46,99 +46,125 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         });
      </script>
-</head>
+ </head>
 <body>
-	<div class="header">
-		<div class="container">
-			<div class="row">
-			  <div class="col-md-12">
-				 <div class="header-left">
-					 <div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=""/></a>
-					 </div>
-					 <div class="menu">
-						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
-						    <ul class="nav" id="nav">
-						    	<li class="current"><a href="shop.html">Shop</a></li>
-						    	<li><a href="team.html">Team</a></li>
-						    	<li><a href="experiance.html">Events</a></li>
-						    	<li><a href="experiance.html">Experiance</a></li>
-						    	<li><a href="shop.html">Company</a></li>
-								<li><a href="contact.html">Contact</a></li>								
-								<div class="clear"></div>
-							</ul>
-							<script type="text/javascript" src="js/responsive-nav.js"></script>
-				    </div>							
-	    		    <div class="clear"></div>
-	    	    </div>
-	            <div class="header_right">
-	    		  <!-- start search-->
-				  <div class="search-box">
-							<div id="sb-search" class="sb-search">
-								<form>
-									<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-									<input class="sb-search-submit" type="submit" value="">
-									<span class="sb-icon-search"> </span>
-								</form>
-							</div>
-						</div>
-						<!----search-scripts---->
-						<script src="js/classie.js"></script>
-						<script src="js/uisearch.js"></script>
-						<script>
-							new UISearch( document.getElementById( 'sb-search' ) );
-						</script>
-				    <ul class="icon1 sub-icon1 profile_img">
-					 <li><a class="active-icon c1" href="#"> </a>
-						<ul class="sub-icon1 list">
-						  <div class="product_control_buttons">
-						  	<a href="#"><img src="images/edit.png" alt=""/></a>
-						  		<a href="#"><img src="images/close_edit.png" alt=""/></a>
-						  </div>
-						   <div class="clear"></div>
-						  <li class="list_img"><img src="images/1.jpg" alt=""/></li>
-						  <li class="list_desc"><h4><a href="#">velit esse molestie</a></h4><span class="actual">1 x
-                          $12.00</span></li>
-						  <div class="login_buttons">
-							 <div class="check_button"><a href="checkout.html">Check out</a></div>
-							 <div class="login_button"><a href="login.html">Login</a></div>
-							 <div class="clear"></div>
-						  </div>
-						  <div class="clear"></div>
-						</ul>
-					 </li>
-				   </ul>
-		        <div class="clear"></div>
-	       </div>
-	      </div>
-		 </div>
-	    </div>
-	  </div>
+	<div class="header" th:insert="~{common :: header}">
+		
+	</div>
      <div class="main">
       <div class="shop_top">
-		<div class="container">
-			<div class="row shop_box-top">
-				<div th:each="article : ${articles}" class="col-md-3 shop_box" padding-bottom= "5em"><a href="single.html">
-				<form action="CartServlet" method="post">
-					<img src="images/pic5.jpg" class="img-responsive" alt=""/>
-			
-					<div class="shop_desc">
-						<h3><a href="#"><p th:text="${article.nom}"></p></a></h3>
-						<p th:text="${article.description}"></p>
-						
-						<span class="actual"><p th:text="${article.prix}"></p></span><br>
-						<input type="hidden" name="prix" value="${article.prix}">
-						<input type="hidden" name="nom" value="${article.nom}">
-						<input type="hidden" name="description" value="${article.description}">
-						<ul class="buttons">
-							<li class="cart"><input type="submit" value="Ajouter au panier"></li>
-							<li class="shop_btn"><a href="#">Voir plus</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div> 
-				</a></form></div>
-				</div></div>
-				</div>
+	     <div class="container">
+						<form action="devis" method="post"> 
+								<div class="register-top-grid">
+										<h3>INFORMATIONS PERSONELLES</h3>
+										<div>
+											<span>NOM<label>*</label></span>
+											<input type="text" name="nom" id="nom"> 
+										</div>
+										<div>
+											<span>PRENOM<label>*</label></span>
+											<input type="text" name="prenom" id="prenom"> 
+										</div>
+										<div>
+											<span>TELEPHONE<label>*</label></span>
+											<input type="text" name="tel" id="tel"> 
+										</div>
+										<div class="clear"> </div>
+								</div>
+								<div class="clear"> </div>
+								<div class="register-bottom-grid">
+										<h3>LA BASE DE VOTRE GUITARE</h3>
+										<div>
+											<span>CORPS<label>*</label></span>
+											<select name="corps" id="corps">
+											  <option value="Corps1">Corps.1</option>
+											  <option value="Corps2">Corps.2</option>
+											</select>
+										</div>
+										<div>
+											<span>SENS DE JEU<label>*</label></span>
+											<select name="sens" id="sens">
+											  <option value="Gauche">Gauche</option>
+											  <option value="Droite">Droite</option>
+											</select>
+										</div>
+										<div>
+											<span>TYPE DE MICROS<label>*</label></span>
+											<select name="micros" id="micros">
+											  <option value="Mic1">Mic.1</option>
+											  <option value="Mic2">Mic.2</option>
+											</select>
+										</div>
+										<div class="clear"> </div>
+								</div>
+								<div class="clear"> </div>
+								<div class="register-bottom-grid">
+									<h3>LE MANCHE</h3>
+										<div>
+											<span>NOMBRE DE FRETTES<label>*</label></span>
+											<select name="frettes" id="frettes">
+											  <option value="22">22</option>
+											  <option value="44">24</option>
+											</select>
+										</div>
+										<div>
+											<span>FINITION<label>*</label></span>
+											<select name="finition" id="finition">
+											  <option value="Fin1">Fin1</option>
+											  <option value="Fin2">Fin2</option>
+											  <option value="Fin3">Fin3</option>
+											  <option value="Fin4">Fin4</option>
+											</select>
+										</div>
+										<div class="clear"> </div>
+								</div>
+								<div class="clear"> </div>
+								<div class="register-bottom-grid">
+									<h3>PERSONNALISATION</h3>
+										<div>
+											<span>DESSIN PERSONNALISE<label>*</label></span>
+											<input type="text" name="dessin" id="dessin">
+										</div>
+										<div class="clear"> </div>
+								</div>
+								<div class="clear"> </div>
+								<div class="register-bottom-grid">
+									<h3>ELECTRONIQUE/ACASTILLAGE</h3>
+										<div>
+											<span>CHEVALET<label>*</label></span>
+											<select name="chevalet" id="chevalet">
+											  <option value="Chev1">Chev.1</option>
+											  <option value="Chev2">Chev.2</option>
+											  <option value="Chev3">Chev.3</option>
+											  <option value="Chev4">Chev.4</option>
+											</select>
+										</div>
+										<div>
+											<span>MECANIQUES<label>*</label></span>
+											<select name="mecaniques" id="mecaniques">
+											  <option value="Mec1">Mec.1</option>
+											  <option value="Mec2">Mec.2</option>
+											  <option value="Mec3">Mec.3</option>
+											  <option value="Mec4">Mec.4</option>
+											</select>
+										</div>
+										<div class="clear"> </div>
+								</div>
+								<div class="clear"> </div>
+								<div class="register-bottom-grid">
+									<h3>NOTES</h3>
+										<div>
+											<span>RENSEIGNEMENTS COMPLEMENTAIRES/COMMENTAIRES<label>*</label></span>
+											<textarea name="commentaires" id="commentaires" rows="5" cols="132"></textarea>
+										</div>
+										<div class="clear"> </div>
+								</div>
+								<div class="clear"> </div>
+								<input type="submit" value="submit">
+						</form>
+					</div>
+		   </div>
+	  </div>
 	  <div class="footer">
 			<div class="container">
 				<div class="row">
@@ -185,8 +211,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							  <li class="pinterest"><a href="#"><span> </span></a></li>	
 							  <li class="youtube"><a href="#"><span> </span></a></li>										  				
 						    </ul>
-		   					
-						</ul>
+		   				</ul>
 					</div>
 				</div>
 				<div class="row footer_bottom">
