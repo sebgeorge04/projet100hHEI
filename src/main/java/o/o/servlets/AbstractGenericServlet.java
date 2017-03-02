@@ -20,7 +20,7 @@ public abstract class AbstractGenericServlet extends HttpServlet {
 		
 		TemplateEngine templateEngine = new TemplateEngine();
 		templateEngine.setTemplateResolver(templateResolver);
-		templateEngine.addDialect(new Java8TimeDialect());
+		
 		
 		return templateEngine;
 	}

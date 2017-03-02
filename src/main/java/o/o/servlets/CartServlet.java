@@ -25,7 +25,7 @@ import o.o.manager.Library;
 @WebServlet("/CartServlet")	
 	public class CartServlet extends AbstractGenericServlet {
 	//
-	    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 	        response.setContentType("text/html;charset=UTF-8");
 	    HttpSession session = request.getSession();

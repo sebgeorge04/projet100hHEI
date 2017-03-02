@@ -40,8 +40,8 @@ public class Library {
 	}
 
 
-	public Comptes getComptes(String nom){
-		return comptesDao.getComptes(nom);
+	public Comptes getComptes(String id){
+		return comptesDao.getComptes(id);
 	}
 	public List<Comptes> listComptes(){
 		return comptesDao.listComptes();
@@ -49,11 +49,11 @@ public class Library {
 	public Comptes addComptes(Comptes compte){
 		return comptesDao.addComptes(compte);
 	}
-    public void deleteComptes(String nom){
-    	comptesDao.deleteComptes(nom);
+    public void deleteComptes(String id){
+    	comptesDao.deleteComptes(id);
     }
-    public void ModifComptes(String nom){
-    	comptesDao.ModifComptes(nom);
+    public void ModifComptes(String id){
+    	comptesDao.ModifComptes(id);
     }
 	public Contact getContact(String nom){
 		return contactDao.getContact(nom);

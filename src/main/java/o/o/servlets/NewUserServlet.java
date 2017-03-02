@@ -61,7 +61,7 @@ public class NewUserServlet extends AbstractGenericServlet{
 	         
 	        // build HTML code
 	        String htmlRespone = "<html>";
-	        htmlRespone += "<h2>Récapitulatif: <br/>";
+	        htmlRespone += "<h2>Rï¿½capitulatif: <br/>";
 	        htmlRespone += "<h2>Nom du client: " + nom + "<br/>";      
 	        htmlRespone += "<h2>Prenom du client: " + prenom + "<br/>";
 	        htmlRespone += "<h2>Votre login: " + email + "<br/>";
