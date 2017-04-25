@@ -17,11 +17,11 @@ public class DataSourceProvider {
 	public static DataSource getDataSource() {
 		if (dataSource == null) {
 			dataSource = new MysqlDataSource();
-			dataSource.setServerName("localhost");
+			dataSource.setServerName("zwgaqwfn759tj79r.chr7pe7iynqr.eu-west-1.rds.amazonaws.com");
 			dataSource.setPort(3306);
-			dataSource.setDatabaseName("projetiti");
-			dataSource.setUser("root");
-			dataSource.setPassword("root");
+			dataSource.setDatabaseName("zexptj97xtqt398a");
+			dataSource.setUser("x2vd5aq4deoxeur2");
+			dataSource.setPassword("sl1t5lniabf4jl4e");
 		}
 		return dataSource;
 	}
