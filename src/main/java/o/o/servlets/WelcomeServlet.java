@@ -29,7 +29,7 @@ public class WelcomeServlet extends AbstractGenericServlet{
 		WebContext context = new WebContext(req, resp, req.getServletContext());
 		
 	
-		templateEngine.process("indexcompte", context, resp.getWriter());
+		templateEngine.process("index", context, resp.getWriter());
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)  
 		    throws ServletException, IOException {  

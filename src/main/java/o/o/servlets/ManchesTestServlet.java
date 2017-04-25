@@ -26,7 +26,8 @@ public class ManchesTestServlet extends AbstractGenericServlet {
 		WebContext context = new WebContext(req, resp, req.getServletContext());
 		
 		context.setVariable("articles", Library.getInstance().listArticles());
-	
+		context.setVariable("connexion", Library.getInstance().listComptes());
+		context.setVariable("categories", Library.getInstance().listCategories());
 		templateEngine.process("shop", context, resp.getWriter());
 	}
 }

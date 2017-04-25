@@ -26,7 +26,7 @@ public class ManchesConnected extends AbstractGenericServlet {
 		WebContext context = new WebContext(req, resp, req.getServletContext());
 		
 		context.setVariable("articles", Library.getInstance().listArticles());
-		context.setVariable("connexion", Library.getInstance().listArticles());
+		context.setVariable("connexions", Library.getInstance().listComptes());
 	
 		templateEngine.process("manchescompte", context, resp.getWriter());
 		

@@ -10,12 +10,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Free Snow Bootstrap Website Template | Contact :: w3layouts</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/tableauadmin.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/vijays_shop.css" type="text/css" >
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/validation2.js" charset="utf-8"></script>
 <script type="text/javascript">
         $(document).ready(function() {
             $(".dropdown img.flag").addClass("flagvisibility");
@@ -53,42 +55,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 	  </div>
      <div class="main">
-      <div id="big_wrapper">            
-            <center><h2> Bienvenue admin</h2></center> <br /> <br />
-           
-               <!--<div class="logmeout"> <input type="submit" name="signout" value=" Se deconnecter "> </div>   -->  
-                <nav id="links"> 
-                    <ul>                        
-                        <li> <a href="admin_insert.jsp" title="Insérer un article" > <img id="insert"  border="0" src="images/insert.jpg" width="75" height="75" alt="Loading" /> </a> </li>
-                        <li> <a href="admin_update.jsp" title="M.A.J article" > <img id="insert"  border="0" src="images/update.jpg" width="75" height="75" alt="Loading" /> </a> </li>
-                        <li> <a href="admin_remove.jsp" title="Supprimer un article" > <img id="insert"  border="0" src="images/delete.png" width="75" height="75" alt="Loading" /> </a> </li>                    
-                        <li> <a href="admin_view_all.jsp" title="Liste des articles" > <img id="insert"  border="0" src="images/view.jpg" width="75" height="75" alt="Loading" /> </a> </li>                    
-                    </ul>
-                </nav>
-              
-                    </div>
+<h1 class="int_admin">Interface administrateur</h1>
+				<ul class="img-list">
+				  <li>
+				    <a href="insert">
+				      <img src="css/power-rangers-power-ranger-approve-this.jpg" width="150" height="150" />
+				      <span class="text-content"><span>Ajout article</span></span>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="http://nataliemac.com">
+				      <img src="css/power-rangers-power-ranger-approve-this.jpg" width="150" height="150" />
+				      <span class="text-content"><span>Suppression article</span></span>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="http://nataliemac.com">
+				      <img src="css/power-rangers-power-ranger-approve-this.jpg" width="150" height="150" />
+				      <span class="text-content"><span>Modif. article</span></span>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="http://nataliemac.com">
+				      <img src="css/power-rangers-power-ranger-approve-this.jpg" width="150" height="150" />
+				      <span class="text-content"><span>Liste produits</span></span>
+				    </a>
+				  </li>
+				</ul>
+				
                     </br>
  <h3> Renseignez ici les informations sur votre article</h3> <br /> 
                     
-                    <form action="insert" method="post">
+                    <form action="insert" method="post" name="formulaire" onsubmit="return valider ();">
                     <label class="labell" for="id">Catégorie : </label>
                     </label><select name="id" id="id">
                         <option th:each="categorie : ${categories}" th:value="${categorie.id}">[[${categorie.nom}]]</option>
                        
                     </select> </br>
                     <label class="labell" for="id_article">ID article :</label>
-						      <input type="text" name="id_article" class="champ" value="id_article" > <br/>
+						      <input type="text" name="id_article" class="champ"  > <br/>
                   <label class="labell" for="nom">Nom :</label>
-						      <input type="text" name="nom" class="champ" value="nom">
+						      <input type="text" name="nom" class="champ" >
                      <br /> 
                      <label class="labell" for="description">Description :</label>
-						      <input type="text" name="description" class="champ" value="description" >
+						      <input type="text" name="description" class="champ"  >
                     <br />  
                     <label class="labell" for="prix">Prix :</label>
-						      <input type="text" name="prix" class="champ" size="5" value="prix">
+						      <input type="text" name="prix" class="champ" size="5" >
                    <br />  </br> </br>
                   
-                    <input type="submit" value="  Insérer  "/>
+                    <input type="submit" value="  Insérer  " onclick="var valeur = document.forms['formulaire'].prix.value.replace(',','.');if(!(valeur*1) || Math.round(valeur/2)<=0){ alert('entrez un nombre superieur a zero');valid=false;} else valid=true; return valid;"/>
              </br>
                 </center>
                 <br /> <br />
@@ -98,5 +114,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  <div class="footer" th:insert="~{common :: footer}">
 			
 		</div>
+		<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/58fe52d364f23d19a89aefea/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>	
 </html>

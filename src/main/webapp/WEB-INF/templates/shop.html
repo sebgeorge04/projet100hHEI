@@ -7,7 +7,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
+<style>
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px solid black;
+}
+</style> 
+
 <title>Free Snow Bootstrap Website Template | Shop :: w3layouts</title>
+
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -46,6 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         });
      </script>
+
 </head>
 <body>
 	<div class="header" th:insert="~{common :: header}">
@@ -54,30 +67,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <div class="main">
       <div class="shop_top">
 		<div class="container">
-			<div class="row shop_box-top">
-				<div th:each="article : ${articles}" class="col-md-3 shop_box" padding-bottom= "5em"><a href="single.html">
-				<form action="CartServlet" method="post">
-					<img src="images/pic5.jpg" class="img-responsive" alt=""/>
+		<h2>Manches</h2></br>
+			<div style="margin-left:100px;">
 			
-					<div class="shop_desc">
-						<h3><a href="#"><p th:text="${article.nom}"></p></a></h3>
-						<p th:text="${article.description}"></p>
+				<div th:each="article : ${articles}" th:if="${article.categorie.id==1}" class="col-md-3 shop_box" padding-bottom= "5em" style="margin-right:80px;margin-bottom:50px;">
+			
+				<table style="width:100%;border-style:solid;">
+					<tr><td colspan=2 style="width: 125px;"><a href="single.html"><img src="images/pic5.jpg" class="img-responsive" alt="" style="width:100%"/></a></td></tr>
+			
+					
+					<tr><td colspan=2 style="width: 125px;">	<h3><a href="#"><p th:text="${article.nom}"></p></a></h3> </td>
+						<tr> <td style="width: 125px;"><p th:text="${article.description}"></p></td>
 						
-						<span class="actual"><p name ="prix" th:text="${article.prix}"></p></span><br>
-						<input type="hidden" name="prix" value="${article.prix}">
-						<input type="hidden" name="nom" value="${article.nom}">
-						<input type="hidden" name="description" value="${article.description}">
-						<ul class="buttons">
-							<li class="cart"><input type="submit" value="Ajouter au panier"></li>
-							<li class="shop_btn"><a href="#">Voir plus</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div> 
-				</a></form></div>
+						<td style="width: 125px;"><p th:text="${article.prix}" name="prix" style="text-align:right;"></p></td></tr>
+						<input type="hidden" name="prix" th:value="${article.prix}">
+			
+					<tr>
+					
+					
+					<input type="hidden" name="id_article" id="id_article" th:value="${article.id_article}">
+					
+				<td colspan=2 width="100%" style="width:100%;"><a th:href="'article?id='+${article.id_article}" th:title="'Details for ' + ${article.id_article}" style="width:100%;align:center;">Details du produit</td></tr>
+				
+				
+  </table>
+ 
+</div>
+</div>
+
+
+				</a></form>
 				</div></div>
 				</div>
 	  <div class="footer" th:insert="~{common :: footer}">
-			
+
 		</div>
+		<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/58fe52d364f23d19a89aefea/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>	
 </html>

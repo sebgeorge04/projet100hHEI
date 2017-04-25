@@ -134,6 +134,13 @@ body a{
 	float:right;
 	width:6%;
 	margin-top: 16px;
+
+    font-size: 0.8125em;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    color: #FFF;
+    font-weight: 600;
+
 }
 .sb-search {
 	position: absolute;
@@ -2030,4 +2037,5 @@ h4.m_11 {
 	float: none;
 	margin: 10px 0;
  }
+ 
 }

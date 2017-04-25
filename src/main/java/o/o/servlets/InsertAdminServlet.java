@@ -53,7 +53,7 @@ public class InsertAdminServlet extends AbstractGenericServlet {
         System.out.println("prix" +prix);
         
         
-		Article article= new Article(cat,null,nom,description,prix);
+		Article article= new Article(cat,id_article,nom,description,prix);
 		Article addedArt=Library.getInstance().addArticle(article); 
 
 		

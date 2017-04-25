@@ -28,13 +28,29 @@ public void setEmail(String email) {
 	this.email = email;
 }
 private String nom;
-public Comptes(String nom, String prenom, String motdepasse, String email) {
+public Comptes(String nom, String prenom, String motdepasse, String email,Integer remise,Integer accreditation) {
 	super();
 	this.motdepasse = motdepasse;
 	this.nom = nom;
 	this.prenom = prenom;
 	this.email = email;
+	this.remise=remise;
+	this.accreditation=accreditation;
 }
 private String prenom;
 private String email;
+private Integer remise;
+public Integer getRemise() {
+	return remise;
+}
+public void setRemise(Integer remise) {
+	this.remise = remise;
+}
+public Integer getAccreditation() {
+	return accreditation;
+}
+public void setAccreditation(Integer accreditation) {
+	this.accreditation = accreditation;
+}
+private Integer accreditation;
 }

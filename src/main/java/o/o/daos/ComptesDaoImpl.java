@@ -22,7 +22,7 @@ public class ComptesDaoImpl implements ComptesDao {
 					while(resultSet.next()) {
 						
 						Comptes comptes = new Comptes(resultSet.getString("nom"), 
-								resultSet.getString("prenom"),resultSet.getString("motdepasse"),resultSet.getString("email"));
+								resultSet.getString("prenom"),resultSet.getString("motdepasse"),resultSet.getString("email"),resultSet.getInt("remise"),resultSet.getInt("accreditation"));
 						compte.add(comptes);
 					}
 				}
@@ -41,7 +41,7 @@ public class ComptesDaoImpl implements ComptesDao {
 				try (ResultSet resultSet = statement.executeQuery()) {
 					if(resultSet.next()) {
 						
-						return  new Comptes(resultSet.getString("nom"),resultSet.getString("prenom"), resultSet.getString("motdepasse"),resultSet.getString("email"));
+						return  new Comptes(resultSet.getString("nom"),resultSet.getString("prenom"), resultSet.getString("motdepasse"),resultSet.getString("email"),resultSet.getInt("remise"),resultSet.getInt("accreditation"));
 					}
 				}
 			}
@@ -55,12 +55,13 @@ public class ComptesDaoImpl implements ComptesDao {
 	public Comptes addComptes(Comptes compte) {
 		// TODO Auto-generated method stub
 		try (Connection connection = DataSourceProvider.getDataSource().getConnection()) {
-			try(PreparedStatement statement = connection.prepareStatement("INSERT INTO connexion(nom,prenom,motdepasse,email) VALUES(?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
+			try(PreparedStatement statement = connection.prepareStatement("INSERT INTO connexion(nom,prenom,motdepasse,email,remise,accreditation) VALUES(?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS)) {
 				statement.setString(1, compte.getNom());
 				statement.setString(2, compte.getPrenom());
 				statement.setString(3, compte.getMotdepasse());
 				statement.setString(4, compte.getEmail());
-				
+				statement.setInt(5, compte.getRemise());
+				statement.setInt(6, compte.getAccreditation());
 				
 				
 				statement.executeUpdate();

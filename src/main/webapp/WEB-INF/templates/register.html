@@ -15,6 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
+<script src="js/form.js"></script>
 <script type="text/javascript">
         $(document).ready(function() {
             $(".dropdown img.flag").addClass("flagvisibility");
@@ -53,37 +54,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <div class="main">
       <div class="shop_top">
 	     <div class="container">
-						<form method="POST" action="adduser"> 
+						<form method="POST" action="adduser" onsubmit="return verifForm(this)"> 
 								<div class="register-top-grid">
 										<h3>INFORMATIONS PERSONELLES</h3>
 										<div>
 											<span>Prenom<label>*</label></span>
-											<input type="text" name="prenom" id="prenom"/> 
+											<input type="text" name="prenom" id="prenom" onblur="verifPrenom(this)"/> 
 										</div>
 										<div>
 											<span>Nom<label>*</label></span>
-											<input type="text" name="nom" id="nom"/> 
+											<input type="text" name="nom" id="nom" onblur="verifNom(this)"/> 
 										</div>
 										<div>
 											<span>Adresse e-mail<label>*</label></span>
-											<input type="text" name="email" id="email"/>
+											<input type="text" name="email" id="email" onblur="verifEmail(this)"/>
 										</div>
 										<div class="clear"> </div>
-											<a class="news-letter" href="#">
+										 <!-- 	<a class="news-letter" href="#">
 												<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>S'inscrire à la Newsletter</label>
 											</a>
-										<div class="clear"> </div>
+										<div class="clear"> </div>-->
 								</div>
 								<div class="clear"> </div>
 								<div class="register-bottom-grid">
 										<h3>INFORMATIONS DE CONNEXION</h3>
 										<div>
 											<span>Mot de passe<label>*</label></span>
-											<input type="text" name="motdepasse" id="motdepasse"/>
+											<input type="text" name="motdepasse" id="motdepasse" onblur="verifMdp(this)"/>
 										</div>
 										<div>
 											<span>Confirmer le mot de passe<label>*</label></span>
-											<input type="text" name="motdepasse" id="motdepasse"/>
+											<input type="text" name="motdepasse" id="motdepasse" onblur="verifMdp(this)"/>
 										</div>
 										<div class="clear"> </div>
 								</div>
@@ -95,5 +96,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  </div>
 	  <div class="footer" th:insert="~{common :: footer}">
 			</div>
+			<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/58fe52d364f23d19a89aefea/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>	
 </html>

@@ -15,6 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/validation.js" charset="utf-8"></script>
 <script type="text/javascript">
         $(document).ready(function() {
             $(".dropdown img.flag").addClass("flagvisibility");
@@ -46,6 +47,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         });
      </script>
+
  </head>
 <body>
 	<div class="header" th:insert="~{common :: header}">
@@ -68,7 +70,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <div class="login-title">
 	           		<h4 class="title">Utilisateurs déjà enregistrés</h4>
 					<div id="loginbox" class="loginbox">
-						<form method="post" action="connexiontest">
+						<form method="post" action="connexiontest" onsubmit="return valider ();" name="formulaire">
 						  <fieldset class="input">
 						    <p id="login-form-username">
 						      <label for="email">Email</label>
@@ -96,5 +98,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  <div class="footer" th:insert="~{common :: footer}">
 			
 		</div>
+		<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/58fe52d364f23d19a89aefea/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>	
 </html>

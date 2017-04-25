@@ -14,5 +14,7 @@ public class Cart {
     public void addToCart(String itemId, int price){
         cartItems.put(itemId, price);
     }
-     
+    public void deleteFromCart(String itemId){
+        cartItems.remove(itemId);
+    }
 }
